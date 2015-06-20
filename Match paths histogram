@@ -1,0 +1,17 @@
+match=read.csv(file="Match Paths sw1285.csv",header=TRUE)
+min=match$a
+mout=match$b
+dilint=match$i
+dilext=match$j
+avgint=mean(match$i,na.rm=TRUE)
+avgext=mean(match$j,na.rm=TRUE)
+sigmaint=sd(match$i,na.rm=TRUE)
+sigmaext=sd(match$j,na.rm=TRUE)
+avgint
+avgext
+sigmaint
+sigmaext
+xaxis=seq(from=-1,to=1,by=.01)
+hist(dilext,br=xaxis,col=rgb(1,0,0,0.2),xlab="Delta IL",ylab="Frequency",main="Delta IL Sw1285")
+hist(dilint,br=xaxis,col=rgb(0,0,1,0.2),add=T)
+legend(x=.5,y=4000,c("external","internal"),cex=.8,col=c("red","blue"),lty=c(1,1)) #add legend
